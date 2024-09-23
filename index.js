@@ -1,3 +1,6 @@
+let currentBalance=document.getElementById('current-balance').innerHTML;
+console.log(parseFloat(currentBalance)+10)
+
 //! donation handler 
 document.getElementById('donation-btn').addEventListener('click', function () {
     const donation = document.getElementById('donation-card-container');
@@ -28,6 +31,12 @@ document.getElementById('donate-btn-1').addEventListener('click', function (even
 
     const amount = document.getElementById('input-1').value;
     const historyConatiner = document.getElementById('history-card-container');
+
+    // Input validation
+    if (!amount || isNaN(amount) || amount <= 0) {
+        alert('Please enter a valid amount');
+        return;
+    }
 
     // Create a new section for the history card
     const newSection = document.createElement('section');
@@ -70,6 +79,12 @@ document.getElementById('donate-btn-2').addEventListener('click', function (even
 
     const amount = document.getElementById('input-2').value;
     const historyConatiner = document.getElementById('history-card-container');
+
+    // Input validation
+    if (!amount || isNaN(amount) || amount <= 0) {
+        alert('Please enter a valid amount');
+        return;
+    }
 
     // Create a new section for the history card
     const newSection = document.createElement('section');
@@ -115,6 +130,12 @@ document.getElementById('donate-btn-3').addEventListener('click', function (even
     const amount = document.getElementById('input-3').value;
     const historyConatiner = document.getElementById('history-card-container');
 
+    // Input validation
+    if (!amount || isNaN(amount) || amount <= 0) {
+        alert('Please enter a valid amount');
+        return;
+    }
+
     // Create a new section for the history card
     const newSection = document.createElement('section');
     newSection.classList.add('p-5', 'border-2', 'rounded-xl', 'mt-8', 'rounded-lg');
@@ -148,3 +169,79 @@ document.getElementById('donate-btn-3').addEventListener('click', function (even
         modal.classList.add('none');  // Add 'hidden' to hide the modal
     });
 })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// function handleDonation(inputId, donateBtnId, donateBtnHandler) {
+//     document.getElementById(donateBtnId).addEventListener('click', function (event) {
+//         event.preventDefault();
+        
+//         const amount = document.getElementById(inputId).value;
+//         const historyContainer = document.getElementById('history-card-container');
+        
+//         // Input validation
+//         if (!amount || isNaN(amount) || amount <= 0) {
+//             alert('Please enter a valid amount');
+//             return;
+//         }
+
+//         // Create new history section
+//         const newSection = document.createElement('section');
+//         newSection.classList.add('p-5', 'border-2', 'rounded-xl', 'mt-8', 'rounded-lg');
+        
+//         const h1 = document.createElement('h1');
+//         h1.textContent = `Donated Amount: ${amount} BDT`;
+//         h1.classList.add('font-bold', 'text-xl');
+        
+//         newSection.appendChild(h1);
+//         historyContainer.appendChild(newSection);
+        
+//         document.getElementById(inputId).value = '';
+
+//         // Show modal
+//         const modal = document.getElementById('congrats-modal');
+//         const donationAmountSpan = document.getElementById('donation-amount');
+//         donationAmountSpan.textContent = amount;
+//         modal.classList.remove('none');
+//         modal.classList.add('flex');
+
+//         // Close modal
+//         document.getElementById('close-modal').addEventListener('click', function () {
+//             modal.classList.remove('flex');
+//             modal.classList.add('none');
+//         });
+
+//         // Custom donate button handler
+//         if (donateBtnHandler) donateBtnHandler(amount);
+//     });
+// }
+
+// // Call the reusable function for each card
+// handleDonation('input-1', 'donate-btn-1');
+// handleDonation('input-2', 'donate-btn-2');
+// handleDonation('input-3', 'donate-btn-3');

@@ -12,12 +12,10 @@
 
 <body class="max-w-screen-xl mx-auto">
     <!-- Section header -->
-    <header>
-
-        <head>
+    <header class="fixed w-full max-w-screen-xl mx-auto">
             <nav class="bg-[#F9F7F3] w-full h-[10vh] flex items-center justify-evenly">
                 <div class="">
-                    <button class="btn bg-[#B4F461] w-24 rounded-lg"><b>Blog</b></button>
+                    <button class="btn bg-[#B4F461] w-24 rounded-lg"><a href="./block.html"><b>Blog</b></a></button>
                 </div>
                 <div class="flex justify-center items-center gap-2">
                     <img src="./assets/logo.png" alt="logo" class="w-9">
@@ -25,14 +23,13 @@
                 </div>
                 <div class="flex justify-center items-center gap-2">
                     <img src="./assets/coin.png" alt="">
-                    <h1 class="font-semibold"><span>5500</span> BDT</h1>
+                    <h1 class="font-semibold"><span id="current-balance">5500</span> BDT</h1>
                 </div>
             </nav>
-        </head>
     </header>
 
     <!-- main contents -->
-    <main class="w-10/12 mx-auto">
+    <main class="w-10/12 mx-auto pt-24">
 
         <!-- section button -->
         <section class="flex gap-5 items-center justify-center mt-14 ">
@@ -120,8 +117,6 @@
                 <button id="close-modal" class="mt-6 btn bg-[#B4F461]">Close</button>
             </div>
         </div>
-
-
 
 
     </main>
